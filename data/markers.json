@@ -9,6 +9,21 @@
             "lat": 18.2208,
             "lng": -66.5901,
             "popup": "Puerto Rico Center"
+        },
+        {
+            "lat": 18.4275,
+            "lng": -66.0647,
+            "popup": "Cieba"
+        },
+        {
+            "lat": 18.0108,
+            "lng": -66.6131,
+            "popup": "Ponce"
+        },
+        {
+            "lat": 18.4274,
+            "lng": -67.1541,
+            "popup": "Aguadilla"
         }
     ]
 }

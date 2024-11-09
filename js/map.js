@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Fetch the config file for access tokens
-    fetch('/data/config.json')
+    fetch('data/config.json')
         .then(response => response.json())
         .then(config => {
+            console.log("Config loaded:", config); // Log config to verify it's correct
             // Initialize the map
             var map = L.map('map').setView([18.2208, -66.5901], 8); // Center on Puerto Rico
 
@@ -14,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }).addTo(map);
 
             // Load markers from the JSON file
-            fetch('/data/markers.json')
+            fetch('data/markers.json')
                 .then(response => response.json())
                 .then(data => {
                     data.markers.forEach(marker => {
