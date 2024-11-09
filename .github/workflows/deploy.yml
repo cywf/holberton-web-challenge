@@ -6,22 +6,19 @@ on:
       - main
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Inject secrets
+      - name: Replace Access Tokens
         run: |
-          mkdir -p data
-          echo '{
-            "MAPBOX_ACCESS_TOKEN": "${{ secrets.MAPBOX_ACCESS_TOKEN }}",
-            "JAWG_ACCESS_TOKEN": "${{ secrets.JAWG_ACCESS_TOKEN }}"
-          }' > data/config.json
+          sed -i 's/JAWG_ACCESS_TOKEN_PLACEHOLDER/${{ secrets.JAWG_ACCESS_TOKEN }}/g' js/map.js
+          sed -i 's/MAPBOX_ACCESS_TOKEN_PLACEHOLDER/${{ secrets.MAPBOX_ACCESS_TOKEN }}/g' js/map.js
 
-      - name: Verify Generated Files
-        run: ls -R
+      - name: Verify Replacement
+        run: cat js/map.js
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
