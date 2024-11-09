@@ -1,0 +1,14 @@
+{
+    "markers": [
+        {
+            "lat": 18.4655,
+            "lng": -66.1057,
+            "popup": "San Juan"
+        },
+        {
+            "lat": 18.2208,
+            "lng": -66.5901,
+            "popup": "Puerto Rico Center"
+        }
+    ]
+}
