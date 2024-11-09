@@ -13,7 +13,7 @@ jobs:
       - name: Inject secrets
         run: |
           echo '{
-            "MAPBOX_ACCESS_TOKEN": "${{ secrets.MAPBOX_ACCESS_TOKEN }}"
+            "MAPBOX_ACCESS_TOKEN": "${{ secrets.MAPBOX_ACCESS_TOKEN }}", "JAWG_ACCESS_TOKEN": "${{ secrets.JAWG_ACCESS_TOKEN }}"
           }' > data/config.json
 
       - name: Deploy to GitHub Pages
